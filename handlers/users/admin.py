@@ -1,4 +1,5 @@
 import asyncio
+from aiogram.dispatcher import FSMContext
 
 from aiogram import types
 
@@ -26,3 +27,9 @@ async def send_ad_to_all(message: types.Message):
         await message.reply(user_id)
         await asyncio.sleep(0.05)
     # await message.reply(users)
+
+@dp.message_handler(text="/drop", user_id=ADMINS)
+async def drop_table(message: types.Message):
+    await db.drop_users()
+    await message.answer("Jadval o'chirildi!")
+

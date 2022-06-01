@@ -1,5 +1,4 @@
 from . import help
-# from . import menu_handlers
+from . import anketa
 from . import start
 from . import admin
-from . import echo
